@@ -1,28 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from 'next/font/google';
 
-
-
-
-
-
-// export default function RootLayout({
-//   children,
-// }: Readonly<{
-//   children: React.ReactNode;
-// }>) {
-//   return (
-
-//     <ClerkProvider>
-//       <html lang="en">
-//         <body className={poppins.variable}>{children}</body>
-//       </html>
-//     </ClerkProvider>
-
-//   );
-// }
-
-
 import {
   ClerkProvider,
   SignInButton,
@@ -57,16 +35,22 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={poppins.variable}>
-          <SignedOut>
-            <SignInButton />
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-          {children}
-        </body>
+        <body className={poppins.variable}>{children}</body>
       </html>
     </ClerkProvider>
+
+    // <ClerkProvider>
+    //   <html lang="en">
+    //     <body className={poppins.variable}>
+    //       <SignedOut>
+    //         <SignInButton />
+    //       </SignedOut>
+    //       <SignedIn>
+    //         <UserButton />
+    //       </SignedIn>
+    //       {children}
+    //     </body>
+    //   </html>
+    // </ClerkProvider>
   )
 }
